@@ -38,7 +38,10 @@ https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-rasp
 |       SCL      |   SCL (GPIO 3)   |
 
 *Note*: There is an option to backlight the screen, to do so, connect the 5V pin of the Pi to the pin directly across from the GND pin for the I2C plugin. Please see the photo below for reference.
-![There is an option to backlight the screen, to do so, connect the 5V pin of the Pi to the pin directly across from the GND pin for the I2C plugin.](/documentation-photos/I2C-LCD-Backlight-Wiring.gif)
+
+<p align="center">
+  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-LCD-Backlight-Wiring.gif">
+</p>
 
 ## Software Setup
 Follow the steps below to set up the Raspberry Pi for this project. Commands you need to perform and code you need to enter are written `like this`.
@@ -67,13 +70,14 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 5. Reboot the Pi.
   a. `sudo reboot`
 6. Run the `ls -l /dev` command. There will be two possible outputs, covered below. The photos used were taken from the [Sparklers the Makers GitHub Blog](https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/).
-  a. If you get an output similar to the first photo below, run the following two commands: `sudo systemctl stop serial-getty@ttyAMA0.service` `sudo systemctl disable serial-getty@ttyAMA0.service`
-  b. If you get an output similar to the second photo below, run the following two commands: `sudo systemctl stop serial-getty@ttyS0.service` `sudo systemctl disable serial-getty@ttyS0.service`
-
-  ![Option 1](/documentation-photos/I2C-Possible-Output-1.gif)
-  
-  ![Option 2](/documentation-photos/I2C-Possible-Output-2.gif)
-
+<p align="center">
+  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-1.gif">
+</p>
+  a. If you get an output similar to the photo above, run the following two commands: `sudo systemctl stop serial-getty@ttyAMA0.service` `sudo systemctl disable serial-getty@ttyAMA0.service`
+<p align="center">
+  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-2.gif">
+</p>
+  b. If you get an output similar to the photo above, run the following two commands: `sudo systemctl stop serial-getty@ttyS0.service` `sudo systemctl disable serial-getty@ttyS0.service`
 7. Let's install the libraries and drivers that we need.
   a. `sudo pip3 install pynmea2`
   b. Make a *git* folder to clone this repository to by entering `mkdir ~/git`
@@ -89,18 +93,10 @@ Now lets run the program to make sure it works!
 
 Huzzah! You should get outputs like the ones below:
 
-  ![Terminal Output](/documentation-photos/Code-Output.gif)
-  
-  ![LCD Output](/documentation-photos/LCD-Output.gif)
+<p align="center">
+  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/Code-Output.gif">
+</p>
 
-
-  
-
-
-
-
-
-
-
-
-
+<p align="center">
+  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/LCD-Output.gif">
+</p>
