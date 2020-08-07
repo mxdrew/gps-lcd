@@ -1,3 +1,4 @@
+
 # GPS LCD
 This repository contains the code for interfacing a Raspberry Pi Model 3B (running Buster) with a 16x2 Character I2C LCD Display and a NEO 6M GPS Module.
 
@@ -70,19 +71,18 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 5. Reboot the Pi.
   a. `sudo reboot`
 6. Run the `ls -l /dev` command. There will be two possible outputs, covered below. The photos used were taken from the [Sparklers the Makers GitHub Blog](https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/).
-<p align="center">
-  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-1.gif">
-</p>
-  a. If you get an output similar to the photo above, run the following two commands: `sudo systemctl stop serial-getty@ttyAMA0.service` `sudo systemctl disable serial-getty@ttyAMA0.service`
-<p align="center">
-  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-2.gif">
-</p>
-  b. If you get an output similar to the photo above, run the following two commands: `sudo systemctl stop serial-getty@ttyS0.service` `sudo systemctl disable serial-getty@ttyS0.service`
-7. Let's install the libraries and drivers that we need.
+![Output 1](https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-1.gif)
+	a. If you get an output similar to the photo below, run the following two commands: `sudo systemctl stop serial-getty@ttyAMA0.service` `sudo systemctl disable serial-getty@ttyAMA0.service`  
+  
+	![Output 2](https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-2.gif)
+	b. If you get an output similar to the photo below, run the following two commands: `sudo systemctl stop serial-getty@ttyS0.service` `sudo systemctl disable serial-getty@ttyS0.service` 
+
+
+8. Let's install the libraries and drivers that we need.
   a. `sudo pip3 install pynmea2`
   b. Make a *git* folder to clone this repository to by entering `mkdir ~/git`
   c. Clone this repository: `git clone https://github.com/amichael1227/gps-lcd.git`
-8. Move the LCD Display drivers into the Python folders.
+9. Move the LCD Display drivers into the Python folders.
   a. `cd ~/`
   b. `sudo cp ~/git/gps-lcd/lib-and-driver/* /usr/lib/python3.7`
   
