@@ -13,7 +13,7 @@ USB to MicroUSB Cable: https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Blac
 ## References
 The code and wiring diagrams contained in this repository is adapted from the following places:
 
-**LCD screen driver and I2C library:**
+**LCD Screen Driver and I2C Library:**
 https://github.com/the-raspberry-pi-guy/lcd
 
 **GPS Code**
@@ -71,13 +71,16 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 5. Reboot the Pi.
   a. `sudo reboot`
 6. Run the `ls -l /dev` command. There will be two possible outputs, covered below. The photos used were taken from the [Sparklers the Makers GitHub Blog](https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/).
-![Output 1](https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-1.gif)
-	a. If you get an output similar to the photo below, run the following two commands: `sudo systemctl stop serial-getty@ttyAMA0.service` `sudo systemctl disable serial-getty@ttyAMA0.service`  
-  
-	![Output 2](https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-2.gif)
-	b. If you get an output similar to the photo below, run the following two commands: `sudo systemctl stop serial-getty@ttyS0.service` `sudo systemctl disable serial-getty@ttyS0.service` 
-
-
+a. If you get an output similar to the photo below, run the following two commands: `sudo systemctl stop serial-getty@ttyAMA0.service` `sudo systemctl disable serial-getty@ttyAMA0.service`  
+b. If you get an output similar to the photo below, run the following two commands: `sudo systemctl stop serial-getty@ttyS0.service` `sudo systemctl disable serial-getty@ttyS0.service` 
+*Possible Output 1*
+<p align="center">
+  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-1.gif">
+</p>
+*Possible Ouput 2*
+<p align="center">
+  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-2.gif">
+</p>
 8. Let's install the libraries and drivers that we need.
   a. `sudo pip3 install pynmea2`
   b. Make a *git* folder to clone this repository to by entering `mkdir ~/git`
