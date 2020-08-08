@@ -9,6 +9,7 @@ import time
 
 # Load the driver and set it to "display"
 display = lcddriver.lcd()
+display.lcd_clear()
 
 # Initialize the serial object for the GPS Module
 ser = serial.Serial('/dev/ttyAMA0', 9600, timeout=5.0) #initialize serial object
