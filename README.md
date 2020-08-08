@@ -131,3 +131,5 @@ Huzzah! You should get outputs like the ones below:
   <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/LCD-Output.gif">
 </p>
 
+## Coming Soon to a GitHub Near you
+This respository will eventually have code to save the Latitude,Longitude, and a Timestamp to a .csv file and then map it using the folium library. The plan is to have all of this happening continously, so the .csv file and the .html file that folium spits out with a map will be constantly overwritten, which slows down the Python script. This does have a benefit though as it can reduce the excessive amount of datapoints that are generated (for example, without any kind of slow down, this setup will output 2345 datapoints for a 35 minute drive, or about 67 a minute, which for my purposes is excessive. That being said, ***it is all currently a very large work in progress***, but will be updated in the near future.
