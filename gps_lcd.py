@@ -38,6 +38,7 @@ try:
                 display.lcd_display_string(lat_str, 1) # Prints out the Latitude on row 1
                 display.lcd_display_string(lon_str, 2) # Prints out the Latitude on row 2
                 time.sleep(5) # Time the program loops again, in seconds
+                display.lcd_clear() # Clears the screen to prevent getting "NN", "WW", "SS", or "EE" after the Lat and Long
 
         except serial.SerialException as e:
             print('Device error: {}'.format(e)) 
