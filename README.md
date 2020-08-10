@@ -22,6 +22,12 @@ https://github.com/amichael1227/gps_test/blob/rosBranch/gps_comm/scripts/gps_tal
 https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/
 
 ## Wiring
+For this section, please refer to the Raspberry Pi GPIO pinout diagram below. This diagram is directly from the Raspberry Pi Documentation found at https://www.raspberrypi.org/documentation/usage/gpio/.
+<p align="center">
+  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/GPIO-Pinout-Diagram.png" style="width:500px;height:600px;>
+</p>
+
+
 **NEO 6M**
 | NEO 6M Pin | Raspberry Pi Pin |
 |:----------:|:----------------:|
