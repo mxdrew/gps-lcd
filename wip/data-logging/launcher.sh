@@ -6,6 +6,6 @@ sudo systemctl disable serial-getty@ttyAMA0.service
 
 
 cd /
-cd /home/pi/gps_lcd_program/
-sudo python3 gps_lcd_startup.py
+cd /home/pi/git/gps-lcd/wip/data-logging
+sudo python3 gps_logger.py
 cd /

@@ -20,6 +20,9 @@ ser = serial.Serial('/dev/ttyAMA0', 9600, timeout=5.0) #initialize serial object
 
 
 # Display this to delay sensor reading until the Pi fully boots
+# and for fix to theoretically be acquired.
+# Was getting an error when running this script at boot
+# without this section.
 display.lcd_display_string("  Booting up!", 1)
 display.lcd_display_string("       3", 2)
 time.sleep(1)
@@ -27,10 +30,15 @@ display.lcd_display_string("       2", 2)
 time.sleep(1)
 display.lcd_display_string("       1",2)
 time.sleep(1)
+display.lcd_display_string("  Now Logging",1)
+display.lcd_display_string("  Lat & Long",2)
+time.sleep(2)
 display.lcd_clear()
 
 
-# Create the CSV file we will be using to log to
+# Create the CSV file we will be using to log to.
+# Please note that this will be added every time
+# that the program is run, so keep that in mind.
 csvfile = "raw_gps_data.csv"
 with open(csvfile, "a") as fp:
     wr = csv.writer(fp, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -46,7 +54,7 @@ try:
             encoded_line = ser.readline() #read nmea sentence
             line = encoded_line.decode('utf-8')
             msg = pynmea2.parse(line)
-#            print(repr(msg)) # Uncomment this line to debug, prints out full message
+           # print(repr(msg)) # Uncomment this line to debug, prints out full message
 
             if line.find('GGA') > 0: # Search for the specific GPS message we want
                 # Prints out Latitude and Longitude when a fix is acquired
@@ -61,6 +69,7 @@ try:
                 lon_str = "  {} {}".format(abs(round(msg.longitude,6)),msg.lon_dir) # Sets Longitude vaiable to print
                 display.lcd_display_string(lat_str, 1) # Prints out the Latitude on row 1
                 display.lcd_display_string(lon_str, 2) # Prints out the Latitude on row 2
+
                 # Logs the data to a csv file
                 with open(csvfile, "a") as fp:
                     wr = csv.writer(fp, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
@@ -82,4 +91,5 @@ try:
 except (KeyboardInterrupt, SystemExit):
     display.lcd_clear()
     print("\nExiting.")
+
 

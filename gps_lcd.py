@@ -9,7 +9,6 @@ import time
 
 # Load the driver and set it to "display"
 display = lcddriver.lcd()
-display.lcd_clear()
 
 # Initialize the serial object for the GPS Module
 ser = serial.Serial('/dev/ttyAMA0', 9600, timeout=5.0) #initialize serial object
@@ -22,7 +21,7 @@ try:
             # Gets the data from the sensor and writes it in a
             # format that the rest of the code can read.
             encoded_line = ser.readline() #read nmea sentence
-            line = encoded_line.decode('utf-8')
+            line = encoded_line #.decode('utf-8')
             msg = pynmea2.parse(line)
             #print(repr(msg)) # Uncomment this line to debug, prints out full message
 
