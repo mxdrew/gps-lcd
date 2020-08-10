@@ -114,7 +114,7 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 <li>Move the LCD Display drivers into the Python folders.</li>
 <ol>
 <li><code>cd ~/</code></li>
-<li><code>sudo cp ~/git/gps-ldcd/lib-and-driver/* /usr/lib/python3.7</code></li>
+<li><code>sudo cp ~/git/gps-lcd/lib-and-driver/* /usr/lib/python3.7</code></li>
 </ol>
 </ol>
 

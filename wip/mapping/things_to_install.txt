@@ -1,0 +1,13 @@
+For this to work, 
+
+
+sudo apt-get install python3-pandas
+sudo pip3 install folium
+
+
+
+
+# Sets up the markers on the map
+# List of colours can be found here: https://stackoverflow.com/a/41993318
+# List of icons can be found here: https://getbootstrap.com/docs/3.3/components/
+
