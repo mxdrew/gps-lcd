@@ -25,7 +25,7 @@ sudo cp -f /home/pi/git/gps-lcd/wip/installing/cmdline.txt /boot/
 cd /
 
 # Comment the lines below out if pynmea2 doesn't work
-#sudo apt-get remove python2.7
+#sudo apt-get remove -y python2.7
 #sudo apt-get autoremove
 
 # Installs the things we need
