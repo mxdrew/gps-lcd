@@ -18,8 +18,8 @@ sudo cp /boot/config.txt /boot/backups/config.txt
 sudo cp /boot/cmdline.txt /boot/backups/cmdline.txt
 
 # Replaces the original copy of the files with ours
-sudo cp -f /home/pi/git/gps-lcd/installer/config.txt /boot/
-sudo cp -f /home/pi/git/gps-lcd/installer/cmdline.txt /boot/
+sudo cp -f /home/pi/git/gps-lcd/important_files/config.txt /boot/
+sudo cp -f /home/pi/git/gps-lcd/important_files/cmdline.txt /boot/
 
 # Navigates to home directory
 cd /

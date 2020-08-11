@@ -59,8 +59,8 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 	</li>
 	<li>Run the set up script.
 	<ol>
-		<li><code>cd ~/git/gps-lcd/important_files/installing</code></li>
-		<li><code>sudo sh setup.sh</code></li>
+		<li><code>cd ~/git/gps-lcd/important_files/</code></li>
+		<li><code>sudo sh installer.sh</code></li>
 	</ol>
 	</li>
 	<li>Reboot the Pi.
