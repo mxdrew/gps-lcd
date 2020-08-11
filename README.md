@@ -50,13 +50,21 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 
 ### The Short Way
 <ol>
-<li>Make a <em>git</em> directory, and clone this repository into it.</li>
+	<li>Make a <em>git</em> directory, and clone this repository into it.
+		<ol>
+			<li><code>mkdir ~/git</code></li>
+			<li><code>cd ~/git</code></li>
+			<li><code>git clone https://github.com/amichael1227/gps-lcd.git</code></li>
+		</ol>
+	</li>
+<li>Run the set up script.
 <ol>
-<li><code>mkdir ~/git</code></li>
-<li><code>cd ~/git</code>
-<li><code>git clone https://github.com/amichael1227/gps-lcd.git</code></li> 
+	<li><code>cd ~/git/gps-lcd/wip/installing</code></li>
+	<li><code>sudo sh setup.sh</code></li>
 </ol>
+</li>
 </ol>
+
 
 ### The Long Way
 <ol>
