@@ -24,7 +24,7 @@ try:
             encoded_line = ser.readline() #read nmea sentence
             line = encoded_line.decode('utf-8')
             msg = pynmea2.parse(line)
-            #print(repr(msg)) # Uncomment this line to debug, prints out full message
+#            print(repr(msg)) # Uncomment this line to debug, prints out full message
 
             if line.find('GGA') > 0: # Search for the specific GPS message we want
 
