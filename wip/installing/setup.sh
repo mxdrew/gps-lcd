@@ -21,12 +21,12 @@ sudo cp /boot/cmdline.txt /boot/backups/cmdline.txt
 sudo cp -f /home/pi/git/gps-lcd/wip/installing/config.txt /boot/
 sudo cp -f /home/pi/git/gps-lcd/wip/installing/cmdline.txt /boot/
 
+# Navigates to home directory
+cd /
 
 # Installs the things we need
-sudo pip3 install pynmea2 folium -y
-sudo apt-get install python3-pandas -y
-
+sudo pip3 install pynmea2 folium
+sudo apt-get install -y python3-pandas
 
 # Moves the drivers and library for the I2C Display
-cd /
 sudo cp /home/pi/git/gps-lcd/lib-and-driver/* /usr/lib/python3.7
