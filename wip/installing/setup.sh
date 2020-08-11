@@ -24,6 +24,10 @@ sudo cp -f /home/pi/git/gps-lcd/wip/installing/cmdline.txt /boot/
 # Navigates to home directory
 cd /
 
+# Comment the lines below out if pynmea2 doesn't work
+#sudo apt-get remove python2.7
+#sudo apt-get autoremove
+
 # Installs the things we need
 sudo pip3 install pynmea2 folium
 sudo apt-get install -y python3-pandas
