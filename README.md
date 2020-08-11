@@ -51,90 +51,112 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 ### The Short Way
 <ol>
 	<li>Make a <em>git</em> directory, and clone this repository into it.
-		<ol>
-			<li><code>mkdir ~/git</code></li>
-			<li><code>cd ~/git</code></li>
-			<li><code>git clone https://github.com/amichael1227/gps-lcd.git</code></li>
-		</ol>
+	<ol>
+		<li><code>mkdir ~/git</code></li>
+		<li><code>cd ~/git</code></li>
+		<li><code>git clone https://github.com/amichael1227/gps-lcd.git</code></li>
+	</ol>
 	</li>
-<li>Run the set up script.
-<ol>
-	<li><code>cd ~/git/gps-lcd/wip/installing</code></li>
-	<li><code>sudo sh setup.sh</code></li>
-</ol>
-</li>
+	<li>Run the set up script.
+	<ol>
+		<li><code>cd ~/git/gps-lcd/wip/installing</code></li>
+		<li><code>sudo sh setup.sh</code></li>
+	</ol>
+	</li>
+	<li>Reboot the Pi.
+	<ol>
+		<li><code>sudo reboot</code></li>
+	</ol>
+	</li>
+	<li>Run the <code>ls -l /dev</code> command. There will be two possible outputs, covered below. The photos used were taken from the <a href="https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/">Sparklers the Makers GitHub Blog</a>.
+		<ol>
+			<p align="center">
+  			<img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-1.gif">
+			</p>
+			<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyAMA0.service</code> 				<code>sudo systemctl disable serial-getty@ttyAMA0.service</code></li>
+			<p align="center">
+ 			 <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-2.gif">
+			</p>
+			<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyS0.service</code> <code>sudo systemctl disable serial-getty@ttyS0.service</code> </li>
+		</ol>	
+		</li>
 </ol>
 
 
 ### The Long Way
 <ol>
-<li>Make sure the Pi is up to date.</li>
-<ol>
-<li><code>sudo apt-get update</code></li>
-<li><code>sudo apt-get upgrade</code></li>
-</ol>
-
-<li>Edit the <em>/boot/config.txt</em> file to enable UART, the Serial Interface, and disable Bluetooth (thus making the GPIO pins the primary UART)</li>
-<ol>
-<li><code>sudo nano /boot/config.txt</code></li>
-<li>Add the following segements as seperate lines at the bottom:</li>
-	<code>dtparam=spi=on</code>
-	<code>dtoverlay=pi3-disable-bt</code>
-	<code>core_freq=250</code>
-	<code>enable_uart=1</code>
-	<code>force_turbo=1</code>
-	<code>dtparam=i2c_arm=1</code>
-<li>Save and exit by pressing <code>ctrl+x</code>, type <code>y</code>, and then press <code>enter</code>.</li>
-</ol>
-
-<li>Reboot the Pi</li>
-<ol>
-<li><code>sudo reboot</code></li>
-</ol>
-
-<li>Make a copy of the <em>/boot/cmdline.txt</em> file before it gets edited.</li>
-<ol>
-<li><code>sudo cp /boot/cmdline.txt /boot/cmdline_backup.txt</code></li>
-</ol>
-
-<li>Edit the <em>/boot/cmdline.txt</em> file.</li>
-<ol>
-<li>Open the file with <code>sudo nano /boot/cmdline.txt</code>.</li>
-<li>Either delete or comment out the current contents, and then replace it with the text below</li>
-<code>dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles</code>
-<li>Save and exit by pressing <code>ctrl+x</code>, type <code>y</code>, and then press <code>enter</code>.</li>
-</ol>
-
-<li>Reboot the Pi.</li>
-<ol>
-<li><code>sudo reboot</code></li>
-</ol>
-<li>Run the <code>ls -l /dev</code> command. There will be two possible outputs, covered below. The photos used were taken from the <a href="https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/">Sparklers the Makers GitHub Blog</a>.</li>
-<ol>
-<p align="center">
-  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-1.gif">
-</p>
-<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyAMA0.service</code> <code>sudo systemctl disable serial-getty@ttyAMA0.service</code></li>
-<p align="center">
-  <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-2.gif">
-</p>
-<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyS0.service</code> <code>sudo systemctl disable serial-getty@ttyS0.service</code> </li>
-</ol>
-<li>Let's install the library we need to run the GPS program.</li>
-<ol>
-<li><code>sudo pip3 install pynmea2</code></li>
-</ol>
-<li>Make a <em>git</em> directory, and clone this repository into it.</li>
-<ol>
-<li><code>mkdir ~/git</code></li>
-<li><code>cd ~/git</code>
-<li><code>git clone https://github.com/amichael1227/gps-lcd.git</code></li> 
-</ol>
-<li>Move the LCD Display drivers into the Python folders.</li>
-<ol>
-<li><code>cd ~/</code></li>
-<li><code>sudo cp ~/git/gps-lcd/lib-and-driver/* /usr/lib/python3.7</code></li>
-</ol>
+	<li>Make sure the Pi is up to date.
+	<ol>
+		<li><code>sudo apt-get update</code></li>
+		<li><code>sudo apt-get upgrade</code></li>
+	</ol>
+	</li>
+	<li>Edit the <em>/boot/config.txt</em> file to enable UART, the Serial Interface, and disable Bluetooth (thus making the GPIO pins the primary UART)
+	<ol>
+		<li><code>sudo nano /boot/config.txt</code></li>
+		<li>Add the following segements as seperate lines at the bottom:</li>
+			<code>dtparam=spi=on</code>
+			<code>dtoverlay=pi3-disable-bt</code>
+			<code>core_freq=250</code>
+			<code>enable_uart=1</code>
+			<code>force_turbo=1</code>
+			<code>dtparam=i2c_arm=1</code>
+		<li>Save and exit by pressing <code>ctrl+x</code>, type <code>y</code>, and then press <code>enter</code>.</li>
+		</ol>
+		</li>
+	<li>Reboot the Pi
+	<ol>
+		<li><code>sudo reboot</code></li>
+	</ol>
+	</li>
+	<li>Make a copy of the <em>/boot/cmdline.txt</em> file before it gets edited.
+	<ol>
+		<li><code>sudo cp /boot/cmdline.txt /boot/cmdline_backup.txt</code></li>
+	</ol>
+	</li>
+	<li>Edit the <em>/boot/cmdline.txt</em> file.
+	<ol>
+		<li>Open the file with <code>sudo nano /boot/cmdline.txt</code>.</li>
+		<li>Either delete or comment out the current contents, and then replace it with the text below</li>
+		<code>dwc_otg.lpm_enable=0 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles</code>
+		<li>Save and exit by pressing <code>ctrl+x</code>, type <code>y</code>, and then press <code>enter</code>.</li>
+	</ol>
+	</li>
+	<li>Reboot the Pi.
+	<ol>
+		<li><code>sudo reboot</code></li>
+	</ol>
+	</li>
+	<li>Run the <code>ls -l /dev</code> command. There will be two possible outputs, covered below. The photos used were taken from the <a href="https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/">Sparklers the Makers GitHub Blog</a>.
+	<ol>
+		<p align="center">
+ 		<img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-1.gif">
+		</p>
+		<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyAMA0.service</code> <code>sudo systemctl disable serial-getty@ttyAMA0.service</code></li>
+		<p align="center">
+ 		<img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/I2C-Possible-Output-2.gif">
+		</p>
+		<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyS0.service</code> <code>sudo systemctl disable serial-getty@ttyS0.service</code> </li>
+	</ol>
+	</li>
+	<li>Let's install the library we need to run the GPS program.
+		<ol>
+		<li><code>sudo pip3 install pynmea2</code></li>
+		</ol>
+		</li>
+	<li>Make a <em>git</em> directory, and clone this repository into it.
+	<ol>
+		<li><code>mkdir ~/git</code></li>
+		<li><code>cd ~/git</code>
+		<li><code>git clone https://github.com/amichael1227/gps-lcd.git</code></li> 
+	</ol>
+	</li>
+	<li>Move the LCD Display drivers into the Python folders.
+	<ol>
+		<li><code>cd ~/</code></li>
+		<li><code>sudo cp ~/git/gps-lcd/lib-and-driver/* /usr/lib/python3.7</code></li>
+	</ol>
+	</li>
 </ol>
 
 ## Run the Program
@@ -151,6 +173,10 @@ Huzzah! You should get outputs like the ones below:
 <p align="center">
   <img src="https://github.com/amichael1227/gps-lcd/blob/master/documentation-photos/LCD-Output.gif">
 </p>
+
+3. *Note:* If you encounter an error about *pynmea2* and you used **The Short Way**, you may have to uncomment the section in the *setup.sh* file that uninstalls Python 2.7
+
+If you encounter any other errors, please feel free to create an [issue](https://github.com/amichael1227/gps-lcd/issues/new) to get help!
 
 ## Coming Soon to a GitHub Near you
 This respository will eventually have code to save the Latitude, Longitude, and a Timestamp to a .csv file and then map it using the folium library. The plan is to have all of this happening continously, so the .csv file and the .html file that folium spits out with a map will be constantly overwritten, which slows down the Python script. This does have a benefit though as it can reduce the excessive amount of datapoints that are generated (for example, without any kind of slow down, this setup will output 2345 datapoints for a 35 minute drive, or about 67 a minute, which for my purposes is excessive. That being said, ***it is all currently a very large work in progress***, but will be updated in the near future.
