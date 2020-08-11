@@ -48,6 +48,17 @@ For this section, please refer to the Raspberry Pi GPIO pinout diagram that is a
 ## Software Setup
 Follow the steps below to set up the Raspberry Pi for this project. Commands you need to perform and code you need to enter are written `like this`.
 
+### The Short Way
+<ol>
+<li>Make a <em>git</em> directory, and clone this repository into it.</li>
+<ol>
+<li><code>mkdir ~/git</code></li>
+<li><code>cd ~/git</code>
+<li><code>git clone https://github.com/amichael1227/gps-lcd.git</code></li> 
+</ol>
+</ol>
+
+### The Long Way
 <ol>
 <li>Make sure the Pi is up to date.</li>
 <ol>
