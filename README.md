@@ -9,6 +9,8 @@ This repository contains the code for interfacing a Raspberry Pi Model 3B (runni
 - MicroSD Card: https://www.amazon.com/SanDisk%C2%AE-microSDHCTM-8GB-Memory-Card/dp/B0012Y2LLE/
 - USB to MicroUSB Cable: https://www.amazon.com/AmazonBasics-Male-Micro-Cable-Black/dp/B0711PVX6Z/
 
+*Please note that these links may no longer work, but they worked at the time I started this project. I'll try my best to update them to working links if the listings change, but can not guarantee that. Additionally, if you have any suggestions for different products or merchants to use, please suggest them!*
+
 ## References
 The code and wiring diagrams contained in this repository is adapted from the following places:
 
