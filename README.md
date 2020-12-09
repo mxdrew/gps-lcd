@@ -1,5 +1,5 @@
 # GPS LCD
-This repository contains the code for interfacing a Raspberry Pi Model 3B (running Buster) with a 16x2 Character I2C LCD Display and a NEO 6M GPS Module.
+This repository contains the code for interfacing a Raspberry Pi Model 3B (running Buster) with a 16x2 Character I2C LCD Display and a NEO 6M GPS Module. The Raspberry Pi is running the most recent version of Raspberry Pi OS.
 
 ## Materials
 - 16x2 LCD Screen with I2C Converter: https://www.amazon.com/SunFounder-Serial-Module-Display-Arduino/dp/B019K5X53O
