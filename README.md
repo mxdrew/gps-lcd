@@ -18,7 +18,7 @@ The code and wiring diagrams contained in this repository is adapted from the fo
 https://github.com/the-raspberry-pi-guy/lcd
 
 **GPS Code**
-https://github.com/dmichael1227/gps_test/blob/rosBranch/gps_comm/scripts/gps_talker.py
+https://github.com/mxdrew/gps_test/blob/rosBranch/gps_comm/scripts/gps_talker.py
 
 **GPS Wiring & GPS Code**
 https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/
@@ -44,7 +44,7 @@ For this section, please refer to the Raspberry Pi GPIO pinout diagram that is a
 *Note*: There is an option to backlight the screen, to do so, connect the 5V pin of the Pi to the pin directly across from the GND pin for the I2C plugin. Please see the photo below for reference.
 
 <p align="center">
-  <img src="https://github.com/dmichael1227/gps-lcd/blob/master/important_files/documentation-photos/I2C-LCD-Backlight-Wiring.gif">
+  <img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-LCD-Backlight-Wiring.gif">
 </p>
 
 ## Software Setup
@@ -56,7 +56,7 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 	<ol>
 		<li><code>mkdir ~/git</code></li>
 		<li><code>cd ~/git</code></li>
-		<li><code>git clone https://github.com/dmichael1227/gps-lcd.git</code></li>
+		<li><code>git clone https://github.com/mxdrew/gps-lcd.git</code></li>
 	</ol>
 	</li>
 	<li>Run the set up script.
@@ -73,11 +73,11 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 	<li>Run the <code>ls -l /dev</code> command. There will be two possible outputs, covered below. The photos used were taken from the <a href="https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/">Sparklers the Makers GitHub Blog</a>.
 		<ol>
 			<p align="center">
-  			<img src="https://github.com/dmichael1227/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-1.gif">
+  			<img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-1.gif">
 			</p>
 			<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyAMA0.service</code> 				<code>sudo systemctl disable serial-getty@ttyAMA0.service</code></li>
 			<p align="center">
- 			 <img src="https://github.com/dmichael1227/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-2.gif">
+ 			 <img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-2.gif">
 			</p>
 			<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyS0.service</code> <code>sudo systemctl disable serial-getty@ttyS0.service</code> </li>
 		</ol>	
@@ -132,11 +132,11 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 	<li>Run the <code>ls -l /dev</code> command. There will be two possible outputs, covered below. The photos used were taken from the <a href="https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/">Sparklers the Makers GitHub Blog</a>.
 	<ol>
 		<p align="center">
- 		<img src="https://github.com/dmichael1227/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-1.gif">
+ 		<img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-1.gif">
 		</p>
 		<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyAMA0.service</code> <code>sudo systemctl disable serial-getty@ttyAMA0.service</code></li>
 		<p align="center">
- 		<img src="https://github.com/dmichael1227/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-2.gif">
+ 		<img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-2.gif">
 		</p>
 		<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyS0.service</code> <code>sudo systemctl disable serial-getty@ttyS0.service</code> </li>
 	</ol>
@@ -150,7 +150,7 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 	<ol>
 		<li><code>mkdir ~/git</code></li>
 		<li><code>cd ~/git</code>
-		<li><code>git clone https://github.com/dmichael1227/gps-lcd.git</code></li> 
+		<li><code>git clone https://github.com/mxdrew/gps-lcd.git</code></li> 
 	</ol>
 	</li>
 	<li>Move the LCD Display drivers into the Python folders.
@@ -169,16 +169,16 @@ Now lets run the program to make sure it works!
 Huzzah! You should get outputs like the ones below:
 
 <p align="center">
-  <img src="https://github.com/dmichael1227/gps-lcd/blob/master/important_files/documentation-photos/Code-Output.gif">
+  <img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/Code-Output.gif">
 </p>
 
 <p align="center">
-  <img src="https://github.com/dmichael1227/gps-lcd/blob/master/important_files/documentation-photos/LCD-Output.gif">
+  <img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/LCD-Output.gif">
 </p>
 
 3. *Note:* If you encounter an error about *pynmea2* and you used **The Short Way**, you may have to uncomment the section in the *setup.sh* file that uninstalls Python 2.7
 
-If you encounter any other errors, please feel free to create an [issue](https://github.com/dmichael1227/gps-lcd/issues/new) to get help!
+If you encounter any other errors, please feel free to create an [issue](https://github.com/mxdrew/gps-lcd/issues/new) to get help!
 
 ## Coming Soon to a GitHub Near you
 This respository will eventually have code to save the Latitude, Longitude, and a Timestamp to a .csv file and then map it using the folium library. The plan is to have all of this happening continously, so the .csv file and the .html file that folium spits out with a map will be constantly overwritten, which slows down the Python script. This does have a benefit though as it can reduce the excessive amount of datapoints that are generated (for example, without any kind of slow down, this setup will output 2345 datapoints for a 35 minute drive, or about 67 a minute, which for my purposes is excessive. That being said, ***it is all currently a very large work in progress***, but will be updated in the near future.
