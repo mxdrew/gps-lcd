@@ -44,7 +44,7 @@ For this section, please refer to the Raspberry Pi GPIO pinout diagram that is a
 *Note*: There is an option to backlight the screen, to do so, connect the 5V pin of the Pi to the pin directly across from the GND pin for the I2C plugin. Please see the photo below for reference.
 
 <p align="center">
-  <img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-LCD-Backlight-Wiring.gif">
+  <img src="https://github.com/mxdrew/gps-lcd/blob/main/important_files/documentation-photos/I2C-LCD-Backlight-Wiring.gif">
 </p>
 
 ## Software Setup
@@ -73,11 +73,11 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 	<li>Run the <code>ls -l /dev</code> command. There will be two possible outputs, covered below. The photos used were taken from the <a href="https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/">Sparklers the Makers GitHub Blog</a>.
 		<ol>
 			<p align="center">
-  			<img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-1.gif">
+  			<img src="https://github.com/mxdrew/gps-lcd/blob/main/important_files/documentation-photos/I2C-Possible-Output-1.gif">
 			</p>
 			<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyAMA0.service</code> 				<code>sudo systemctl disable serial-getty@ttyAMA0.service</code></li>
 			<p align="center">
- 			 <img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-2.gif">
+ 			 <img src="https://github.com/mxdrew/gps-lcd/blob/main/important_files/documentation-photos/I2C-Possible-Output-2.gif">
 			</p>
 			<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyS0.service</code> <code>sudo systemctl disable serial-getty@ttyS0.service</code> </li>
 		</ol>	
@@ -132,11 +132,11 @@ Follow the steps below to set up the Raspberry Pi for this project. Commands you
 	<li>Run the <code>ls -l /dev</code> command. There will be two possible outputs, covered below. The photos used were taken from the <a href="https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/">Sparklers the Makers GitHub Blog</a>.
 	<ol>
 		<p align="center">
- 		<img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-1.gif">
+ 		<img src="https://github.com/mxdrew/gps-lcd/blob/main/important_files/documentation-photos/I2C-Possible-Output-1.gif">
 		</p>
 		<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyAMA0.service</code> <code>sudo systemctl disable serial-getty@ttyAMA0.service</code></li>
 		<p align="center">
- 		<img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/I2C-Possible-Output-2.gif">
+ 		<img src="https://github.com/mxdrew/gps-lcd/blob/main/important_files/documentation-photos/I2C-Possible-Output-2.gif">
 		</p>
 		<li>If you get an output similar to the photo above, run the following two commands: <code>sudo systemctl stop serial-getty@ttyS0.service</code> <code>sudo systemctl disable serial-getty@ttyS0.service</code> </li>
 	</ol>
@@ -169,11 +169,11 @@ Now lets run the program to make sure it works!
 Huzzah! You should get outputs like the ones below:
 
 <p align="center">
-  <img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/Code-Output.gif">
+  <img src="https://github.com/mxdrew/gps-lcd/blob/main/important_files/documentation-photos/Code-Output.gif">
 </p>
 
 <p align="center">
-  <img src="https://github.com/mxdrew/gps-lcd/blob/master/important_files/documentation-photos/LCD-Output.gif">
+  <img src="https://github.com/mxdrew/gps-lcd/blob/main/important_files/documentation-photos/LCD-Output.gif">
 </p>
 
 3. *Note:* If you encounter an error about *pynmea2* and you used **The Short Way**, you may have to uncomment the section in the *setup.sh* file that uninstalls Python 2.7
